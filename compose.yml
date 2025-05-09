@@ -14,7 +14,7 @@ services:
    ports:
      - "1234:8080"
    depends_on:
-     - "devopsdb"
+     - devopsdb
 volumes:
- mysqlvolume:
+  mysqlvolume:
 
