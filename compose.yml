@@ -2,14 +2,19 @@
 version: "3"
 services:
  devopsdb:
-   image: saipraveen63/dbimage
-   container_name: devopsdb 
+   build: ./Docker-db
+   container_name: devopsdb
    ports:
      - "3306:3306"
+   volumes:
+   - mysqlvolume: /var/lib/mysql
  application:
-   image: saipraveen63/appimage
-   container_name: appcontainer
+   build: ./Docker-app
+   container_name: appcont
    ports:
      - "1234:8080"
    depends_on:
      - "devopsdb"
+volumes:
+ mysqlvolume:
+
