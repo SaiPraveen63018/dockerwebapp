@@ -7,7 +7,7 @@ services:
    ports:
      - "3306:3306"
    volumes:
-   - mysqlvolume: /var/lib/mysql
+   - mysqlvolume:/var/lib/mysql
  application:
    build: ./Docker-app
    container_name: appcont
